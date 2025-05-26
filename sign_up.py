@@ -22,7 +22,8 @@ def take_inp(prompt):
             data = input(prompt)
             if not data: 
                 print("Enter a valid input!")
-            return data
+            else:
+                return data
 # function for saving user into database 
 def save_user(fname, lname, age, email, password): 
     with conn:
