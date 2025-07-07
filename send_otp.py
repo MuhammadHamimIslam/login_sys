@@ -7,17 +7,17 @@ import secrets
 
 load_dotenv()
 
-email_body = f"""
-Your otp is {otp_code} to sign up for pyTest.
-If It's not you, You can simply ignore this email.
-Stay secure,
-pyTest by Muhammad Hamim Islam ©2025
-"""
 email_sender = os.getenv("EMAIL_SENDER")
 email_password = os.getenv("APP_PASSWORD")
 
 def send_otp(email_receiver):
     otp_code = "".join(str(secrets.randbelow(10)) for _ in range(6))
+    email_body = f"""
+Your otp is {otp_code} to sign up for pyTest.
+If It's not you, You can simply ignore this email.
+Stay secure,
+pyTest by Muhammad Hamim Islam ©2025
+"""
     # setup for sending email 
     em = EmailMessage()
     em["From"] = email_sender
